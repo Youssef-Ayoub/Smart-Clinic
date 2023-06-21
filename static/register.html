@@ -1,3 +1,4 @@
+{% load static %}
 <head>
     <meta charset="utf-8">
     <title>MONKYPOX CLINIC</title>
@@ -6,7 +7,7 @@
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -17,14 +18,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
     <body>
 <!-- Section: Design Block -->
@@ -38,10 +39,11 @@
           </div>
           <div class="card-body p-4 p-sm-5">
             <h5 class="card-title text-center mb-5 fw-light fs-5">Login</h5>
-            <form>
+            <form action="" method="POST">
+              {% csrf_token %}
 
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInputUsername" placeholder="myusername" required autofocus>
+                <input type="text" class="form-control" name="username" id="floatingInputUsername" placeholder="username" required autofocus>
                 <label for="floatingInputUsername">Username</label>
               </div>
 
@@ -49,7 +51,7 @@
               <hr>
 
               <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="password">
                 <label for="floatingPassword">Password</label>
               </div>
 
@@ -59,7 +61,6 @@
                 <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">Login</button>
               </div>
 
-             
 
               <hr class="my-4">
 

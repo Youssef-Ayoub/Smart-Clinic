@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +10,7 @@
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -24,10 +25,10 @@
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
 
 <body>
@@ -46,7 +47,7 @@
     <div class="container-fluid sticky-top bg-white shadow-sm">
         <div class="container">
             <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
-                <a href="index.html" class="navbar-brand">
+                <a href="index" class="navbar-brand">
                     <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-clinic-medical me-2"></i>Monkeypox clinic</h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -54,15 +55,15 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link">Service</a>
+                        <a href="index" class="nav-item nav-link active">Home</a>
+                        <a href="about" class="nav-item nav-link">About</a>
+                        <a href="service" class="nav-item nav-link">Service</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0">
-                                <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                                <a href="detail.html" class="dropdown-item">Blog Detail</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                                <a href="blog" class="dropdown-item">Blog Grid</a>
+                                <a href="detail" class="dropdown-item">Blog Detail</a>
+                                <a href="testimonial" class="dropdown-item">Testimonial</a>
                             </div>
                         </div>
                     </div>
@@ -81,8 +82,8 @@
                     <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5" style="border-color: rgba(256, 256, 256, .3) !important;">Welcome To Monkeypox Clinic</h5>
                     <h1 class="display-1 text-white mb-md-4">Best Medical Care For Monkeypox</h1>
                     <div class="pt-2">
-                        <a href="file:///C:/Users/Sarah/Downloads/MEDINOVA%20Free%20Website%20Template%20-%20Free-CSS.com/hospital-website-template/register.html" class="btn btn-light rounded-pill py-md-3 px-md-5 mx-2">Login</a>
-                        <a href="file:///C:/Users/Sarah/Downloads/MEDINOVA%20Free%20Website%20Template%20-%20Free-CSS.com/hospital-website-template/login.html" class="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2">Register</a>
+                        <a href="file:///C:/Users/Sarah/Downloads/MEDINOVA%20Free%20Website%20Template%20-%20Free-CSS.com/hospital-website-template/register" class="btn btn-light rounded-pill py-md-3 px-md-5 mx-2">Login</a>
+                        <a href="file:///C:/Users/Sarah/Downloads/MEDINOVA%20Free%20Website%20Template%20-%20Free-CSS.com/hospital-website-template/login" class="btn btn-outline-light rounded-pill py-md-3 px-md-5 mx-2">Register</a>
                     </div>
                 </div>
             </div>
@@ -97,7 +98,7 @@
             <div class="row gx-5">
                 <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-50 rounded" src="img/about.jpg" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-50 rounded" src="{% static 'img/about.jpg' %}" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-7">
@@ -129,7 +130,7 @@
                     <div class="owl-carousel testimonial-carousel">
                         <div class="testimonial-item text-center">
                             <div class="position-relative mb-5">
-                                <img class="img-fluid rounded-circle mx-auto" src="img/testimonial-1.jpg" alt="">
+                                <img class="img-fluid rounded-circle mx-auto" src="{% static 'img/testimonial-1.jpg' %}" alt="">
                                 <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle" style="width: 60px; height: 60px;">
                                     <i class="fa fa-quote-left fa-2x text-primary"></i>
                                 </div>
@@ -141,7 +142,7 @@
                         </div>
                         <div class="testimonial-item text-center">
                             <div class="position-relative mb-5">
-                                <img class="img-fluid rounded-circle mx-auto" src="img/testimonial-2.jpg" alt="">
+                                <img class="img-fluid rounded-circle mx-auto" src="{% static 'img/testimonial-2.jpg' %}" alt="">
                                 <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle" style="width: 60px; height: 60px;">
                                     <i class="fa fa-quote-left fa-2x text-primary"></i>
                                 </div>
@@ -153,7 +154,7 @@
                         </div>
                         <div class="testimonial-item text-center">
                             <div class="position-relative mb-5">
-                                <img class="img-fluid rounded-circle mx-auto" src="img/testimonial-3.jpg" alt="">
+                                <img class="img-fluid rounded-circle mx-auto" src="{% static 'img/testimonial-3.jpg' %}" alt="">
                                 <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white rounded-circle" style="width: 60px; height: 60px;">
                                     <i class="fa fa-quote-left fa-2x text-primary"></i>
                                 </div>
@@ -181,9 +182,9 @@
             <div class="row g-5">
                 <div class="col-xl-4 col-lg-6">
                     <div class="bg-light rounded overflow-hidden">
-                        <img class="img-fluid w-100" src="img/blog-1.jpg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'img/blog-1.jpg' %}" alt="">
                         <div class="p-4">
-                            <a class="h3 d-block mb-3" href="file:///C:/Users/Sarah/Downloads/MEDINOVA%20Free%20Website%20Template%20-%20Free-CSS.com/hospital-website-template/what%20is.html">What is Monkeypox?</a>
+                            <a class="h3 d-block mb-3" href="whatis">What is Monkeypox?</a>
                            
                        
                             <div class="d-flex align-items-center">
@@ -195,9 +196,9 @@
                 </div>
                 <div class="col-xl-4 col-lg-6">
                     <div class="bg-light rounded overflow-hidden">
-                        <img class="img-fluid w-100" src="img/blog-2.jpg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'img/blog-2.jpg' %}" alt="">
                         <div class="p-4">
-                            <a class="h3 d-block mb-3" href="file:///C:/Users/Sarah/Downloads/MEDINOVA%20Free%20Website%20Template%20-%20Free-CSS.com/hospital-website-template/what%20are.html">What are the symptoms of Monkeypox?</a>
+                            <a class="h3 d-block mb-3" href="whatare">What are the symptoms of Monkeypox?</a>
                            
                             <div class="d-flex align-items-center">
                                 
@@ -207,9 +208,9 @@
                 </div>
                 <div class="col-xl-4 col-lg-6">
                     <div class="bg-light rounded overflow-hidden">
-                        <img class="img-fluid w-100" src="img/blog-3.jpg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'img/blog-3.jpg' %}" alt="">
                         <div class="p-4">
-                            <a class="h3 d-block mb-3" href="file:///C:/Users/Sarah/Downloads/MEDINOVA%20Free%20Website%20Template%20-%20Free-CSS.com/hospital-website-template/treatment.html">What is Monkeypox treatment methods?</a>
+                            <a class="h3 d-block mb-3" href="treatment">What is Monkeypox treatment methods?</a>
                            
                             <div class="d-flex align-items-center">
                                 

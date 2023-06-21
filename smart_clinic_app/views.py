@@ -36,7 +36,7 @@ from django.http import JsonResponse
 # returns a compiled model
 # identical to the previous one
 model = load_model(
-    'E:\paid project\smart_clinic\project\Last_project_my_model.h5')
+    r"E:\paid project\Smart-Clinic\Last_project_my_model.h5")
 
 # Create your views here.
 
@@ -217,7 +217,7 @@ def save_picture(request):
     with open(settings.MEDIA_ROOT + 'picture.png', 'wb') as f:
         f.write(picture_data)
 
-    img1 = image.load_img("E:\paid project\Smart-Clinic\picture.png",
+    img1 = image.load_img(r"E:\paid project\Smart-Clinic\picture.png",
                           target_size=(150, 150), color_mode="grayscale")
 
     x = image.img_to_array(img1)
@@ -229,10 +229,10 @@ def save_picture(request):
     dic = {
         'value': int(value_dict[0])
     }
-    if dic == 1:
+    if dic['value'] == 1:
         return render(request, "positive.html")
-    elif dic == -1:
-        return render(request, "Negative.html")
+    elif dic['value'] == -1:
+        return render(request, "negative.html")
     else:
         return render(request, "camera.html", dic)
 

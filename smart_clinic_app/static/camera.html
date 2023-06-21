@@ -1,0 +1,48 @@
+<!-- camera.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Camera View</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Take a Picture</h1>
+    <div id="camera"></div>
+    <form id="picture-form" method="post" action="{% url 'save_picture' %}">
+        {% csrf_token %}
+        <input type="hidden" name="picture_data" id="picture-data">
+        <button type="submit">Save Picture</button>
+    </form>
+
+    {% if value %}
+    Value in data is : - {{ value }}
+    {% else %}
+    Data is empty
+    {% endif%}
+
+    <script>
+        $(document).ready(function() {
+            var video = document.createElement("video");
+            var canvas = document.createElement("canvas");
+            canvas.width = 640;
+            canvas.height = 480;
+            var ctx = canvas.getContext("2d");
+            var pictureDataInput = document.getElementById("picture-data");
+
+            navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+                video.srcObject = stream;
+                video.play();
+            });
+
+            var takePicture = function() {
+                ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+                var pictureData = canvas.toDataURL();
+                pictureDataInput.value = pictureData;
+            };
+
+            document.getElementById("camera").appendChild(video);
+            setInterval(takePicture, 1000);
+        });
+    </script>
+</body>
+</html>

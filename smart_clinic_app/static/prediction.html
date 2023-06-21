@@ -1,0 +1,46 @@
+<!-- predict.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predict View</title>
+</head>
+<body>
+    <h1>Predict View</h1>
+    <form id="input-form" method="post" action="{% url 'predict' %}">
+        {% csrf_token %}
+        <label for="input-data">Input Data:</label>
+        <input type="hidden" name="image" value="/picture.png">
+        <img src="/path/to/image.png" alt="Image">
+        <button type="submit">Predict</button>
+    </form>
+
+    <div id="prediction"></div>
+
+    <script>
+        $(document).ready(function() {
+            $('#input-form').submit(function(event) {
+                // Prevent the form from submitting normally
+                event.preventDefault();
+
+                // Get the input data from the form
+                var input_data = $('#input-data').val();
+
+                // Send a POST request to the predict view
+                $.ajax({
+                    type: 'POST',
+                    url: '{% url 'predict' %}',
+                    data: {
+                        'input_data': input_data,
+                        'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
+                    },
+                    success: function(data) {
+                        // Display the prediction in the prediction div
+                        $('#prediction').text(data.prediction);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

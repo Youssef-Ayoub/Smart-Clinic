@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +10,7 @@
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -24,10 +25,10 @@
     <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
     <body>
 <!-- Section: Design Block -->
@@ -41,27 +42,28 @@
           </div>
           <div class="card-body p-4 p-sm-5">
             <h5 class="card-title text-center mb-5 fw-light fs-5">Register</h5>
-            <form>
+            <form action ="" method = "POST">
+              {% csrf_token %}
 
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInputUsername" placeholder="myusername" required autofocus>
+                <input type="text" class="form-control" id="floatingInputUsername" placeholder="Username" required autofocus name="Username">
                 <label for="floatingInputUsername">Username</label>
               </div>
 
               <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com">
+                <input type="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com" name="Email">
                 <label for="floatingInputEmail">Email address</label>
               </div>
 
               <hr>
 
               <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="Password">
                 <label for="floatingPassword">Password</label>
               </div>
 
               <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="floatingPasswordConfirm" placeholder="Confirm Password">
+                <input type="password" class="form-control" id="floatingPasswordConfirm" placeholder="Confirm Password" name="Confirm Password">
                 <label for="floatingPasswordConfirm">Confirm Password</label>
               </div>
 
@@ -69,7 +71,7 @@
                 <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">Register</button>
               </div>
 
-              <a class="d-block text-center mt-2 small" href="#">Have an account? Sign In</a>
+              <a class="d-block text-center mt-2 small" href="login">Have an account? Sign In</a>
 
               <hr class="my-4">
 
