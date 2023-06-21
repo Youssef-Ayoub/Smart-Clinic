@@ -18,4 +18,6 @@ urlpatterns = [
     path('whatis', views.whatis),
     path('camera/', views.camera_view, name='camera_view'),
     path('save_picture/', views.save_picture, name='save_picture'),
+    path('negative', views.negative),
+    path('positive', views.positive)
 ]

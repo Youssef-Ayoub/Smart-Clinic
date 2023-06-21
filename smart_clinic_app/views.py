@@ -194,6 +194,14 @@ def whatis(request):
     return render(request, 'what is.html')
 
 
+def negative(request):
+    return render(request, 'Negative.html')
+
+
+def positive(request):
+    return render(request, 'positive.html')
+
+
 #############################################
 
 
@@ -209,7 +217,7 @@ def save_picture(request):
     with open(settings.MEDIA_ROOT + 'picture.png', 'wb') as f:
         f.write(picture_data)
 
-    img1 = image.load_img("E:\paid project\smart_clinic\project\picture.png",
+    img1 = image.load_img("E:\paid project\Smart-Clinic\picture.png",
                           target_size=(150, 150), color_mode="grayscale")
 
     x = image.img_to_array(img1)
@@ -221,7 +229,11 @@ def save_picture(request):
     dic = {
         'value': int(value_dict[0])
     }
-
-    return render(request, "camera.html", dic)
+    if dic == 1:
+        return render(request, "positive.html")
+    elif dic == -1:
+        return render(request, "Negative.html")
+    else:
+        return render(request, "camera.html", dic)
 
 ###################################################
